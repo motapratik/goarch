@@ -1,0 +1,38 @@
+{
+  "apps":{
+    "name":"goarch",
+    "version":"1.0.0",
+    "httpPort":8811,
+    "grpcPort":8822
+  },
+  "database":{
+    "username":"postgres",
+    "password":"",
+    "name":"goarch",
+    "schema":"public",
+    "host":"127.0.0.1",
+    "port":5432,
+    "minIdleConnections":10,
+    "maxOpenConnections":30,
+    "debugMode":false
+  },
+  "goarchGrpc": {
+    "rpcOptions": {
+      "address": "127.0.0.1:8822",
+      "timeout": 30
+    }
+  },
+  "goarchAPIConfig": {
+    "restOptions": {
+      "address": "http://127.0.0.1:8811",
+      "timeout": 30,
+      "debugMode": false,
+      "withProxy": false,
+      "skipTLS": true,
+      "skipCheckRedirect": false
+    },
+    "path": {
+      "getUserDetail": "/api/v1/public/user"
+    }
+  }
+}
